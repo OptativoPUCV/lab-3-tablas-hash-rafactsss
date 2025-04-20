@@ -115,8 +115,10 @@ Pair * searchMap(HashMap * map, char * key) {
             map->current = index;
             return map->buckets[index];
         }
+        index = (index + 1) % map->capacity;
+        if (index == og) break;
+    }
 
-        
     return NULL;
 }
 
