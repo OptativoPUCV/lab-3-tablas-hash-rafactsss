@@ -59,7 +59,11 @@ void enlarge(HashMap * map) {
 
     long nueva_cap  = capacidad_antigua * 2;
 
-    
+    map->buckets = (Pair **) malloc(sizeof(Pair *) * nueva_cap);
+    map->capacity = nueva_cap;
+    map->size = 0;
+    map->current = -1;
+
 }
 
 
