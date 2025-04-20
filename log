@@ -35,3 +35,22 @@ hashmap.c:57:10: error: unused variable 'cap_antigua' [-Werror=unused-variable]
           ^~~~~~~~~~~
 cc1.exe: all warnings being treated as errors
 0cba65d
+Sat, Apr 19, 2025 11:13:33 PM: 
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:60:23: error: 'capacidad_antigua' undeclared (first use in this function)
+     long nueva_cap  = capacidad_antigua * 2;
+                       ^~~~~~~~~~~~~~~~~
+hashmap.c:60:23: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:60:10: error: unused variable 'nueva_cap' [-Werror=unused-variable]
+     long nueva_cap  = capacidad_antigua * 2;
+          ^~~~~~~~~
+hashmap.c:58:13: error: unused variable 'old_buckets' [-Werror=unused-variable]
+     Pair ** old_buckets = map->buckets;
+             ^~~~~~~~~~~
+hashmap.c:57:10: error: unused variable 'cap_antigua' [-Werror=unused-variable]
+     long cap_antigua  = map->capacity;
+          ^~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+b2e2844
