@@ -111,6 +111,11 @@ Pair * searchMap(HashMap * map, char * key) {
     long og = index;
 
     while (map->buckets[index] != NULL) {
+        if (map->buckets[index]->key != NULL && is_equal(map->buckets[index]->key, key)) {
+            map->current = index;
+            return map->buckets[index];
+        }
+
         
     return NULL;
 }
