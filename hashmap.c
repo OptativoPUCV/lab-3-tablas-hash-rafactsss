@@ -40,10 +40,16 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
+    long index = hash(key, map->capacity);
+    long original = index;
 
-
+    while (map->buckets[index] != NULL && map->buckets[index]->key != NULL) {
+        if (is_equal(map->buckets[index]->key, key)) return;
+        index = (index + 1) % map->capacity;
+        if (index == original) return;
+    }
+   
 }
-
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
 
