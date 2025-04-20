@@ -100,7 +100,10 @@ void eraseMap(HashMap * map,  char * key) {
             map->size--;
             return;
         }
+        index = (index + 1) % map->capacity;
 
+        if (index == originalIndex) break;
+    }
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
