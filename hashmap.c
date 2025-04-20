@@ -66,7 +66,13 @@ void enlarge(HashMap * map) {
     for (long i = 0; i < nueva_cap; i++) {
         map->buckets[i] = NULL;
     }
-    
+    for (long i = 0; i < cap_antigua; i++) {
+        if (old_buckets[i] != NULL && old_buckets[i]->key != NULL) {
+            insertMap(map, old_buckets[i]->key, old_buckets[i]->value);
+        }
+    }
+
+    free(old_buckets);
 }
 
 
